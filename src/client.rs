@@ -195,7 +195,7 @@ impl RobotEvents {
         &self,
         season_id: i32,
         query: SeasonEventsQuery,
-    ) -> Result<PaginatedResponse<Season>, reqwest::Error> {
+    ) -> Result<PaginatedResponse<Event>, reqwest::Error> {
         Ok(self
             .request(format!("/seasons/{season_id}/events{query}"))
             .await?
