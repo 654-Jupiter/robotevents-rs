@@ -74,11 +74,11 @@ impl SeasonEventsQuery {
         Self::default()
     }
 
-    pub fn sku(mut self, sku: i32) -> Self {
-        self.query.insert("sku%5B%5D", sku.to_string());
+    pub fn sku(mut self, sku: String) -> Self {
+        self.query.insert("sku%5B%5D", sku);
         self
     }
-    pub fn skus(mut self, skus: &[i32]) -> Self {
+    pub fn skus(mut self, skus: &[String]) -> Self {
         self.query.insert("sku%5B%5D", join(skus, ","));
         self
     }
